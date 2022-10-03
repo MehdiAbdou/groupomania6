@@ -1,9 +1,10 @@
+import React from "react";
+import Routes from "./components/Routes"
 
-import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <h1> hello </h1>
+    <Routes />
   );
 }
 
