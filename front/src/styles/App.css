@@ -67,7 +67,7 @@ body {
     font-weight: bold;
 }
 
-
+/*////////////// Page de login /////////////*/
 .connection-form {
     border: 2px solid #fd2d01;
     width: 400px;
@@ -105,3 +105,4 @@ body {
     margin: 10px auto 0;
     padding: 20px;
 }
+
