@@ -1,3 +1,107 @@
-h1{
-font-size: 50px
-};
+/*Settings*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+*::selection {
+    background: #fd2d01;
+}
+a, a:visited {
+    color: #4e5166;
+}
+input, textarea {
+    resize: none;
+    border-radius: 20px;
+    width: 270px;
+    font-family: "font-1", sans-serif;
+    background: #fff;
+}
+textarea:focus {
+    box-shadow: 0 0 4px rgba(0, 22, 44, 0.1);
+}
+button, input[type="submit"] {
+    background: #fff;
+    color: #4e5166;
+    font-family: "font-3", serif;
+    cursor: pointer;
+    transition: 0.2s;
+    margin: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border-radius: 20px 6px 20px 20px;
+}
+button:hover, input[type="submit"]:hover {
+    background: #fd2d01;
+    color: #ffd7d7;
+}
+input[type="checkbox"] {
+    box-shadow: none;
+    width: 20px;
+    margin: 10px 0;
+}
+i {
+    transition: 0.15s;
+}
+i:hover {
+    transform: scale(1.1);
+}
+body {
+    font-family: "font-2", serif;
+    line-height: 1.4rem;
+    background: #fff;
+    color: #000;
+}
+.error {
+    color: #801601;
+    font-weight: bold;
+}
+.success {
+    color: #004e00;
+    font-weight: bold;
+}
+
+
+.connection-form {
+    border: 2px solid #fd2d01;
+    width: 400px;
+    margin: 35px auto 0;
+    padding: 20px 0;
+    user-select: none;
+    text-align: center;
+}
+.connection-form h3 {
+    padding: 10px 0 15px;
+}
+.connection-form ul {
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.connection-form ul li {
+    background: #ffd7d7;
+    color: #fff;
+    width: 130px;
+    padding: 10px 0;
+    border-radius: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 3px 3px 1px rgba(51, 51, 51, 0.418);
+}
+.connection-from ul li:hover {
+    background: #fd2d01;
+}
+.connection-form .active-btn {
+    background: #fd2d01;
+}
+.connection-form form {
+    width: 400px;
+    margin: 10px auto 0;
+    padding: 20px;
+}
