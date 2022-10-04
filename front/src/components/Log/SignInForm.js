@@ -1,33 +1,34 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const SignInForm = () => {//formulaire de connexion
+const SignInForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = (e) => {
-    e.preventDefault();//empêcher le rechargement de la page
-    const emailError = document.querySelector(".email.error");              //recup des erreurs éventuelles
-    const passwordError = document.querySelector(".password.error");        //
+    e.preventDefault();
+    const emailError = document.querySelector(".email.error");
+    const passwordError = document.querySelector(".password.error");
 
-    axios({ //axios pour envoyer la requête
+    axios({
       method: "post",
-      url: `${process.env.REACT_APP_API_URL}api/user/login`, //${url de l'api}api/"cheminDeLaRequete"
+      url: `${process.env.REACT_APP_API_URL}api/user/login`,
       withCredentials: true,
-      data: { //contenu de la requête
+      data: {
         email,
         password,
       },
     })
-      .then((res) => {              //ce qu'on fait de la réponse
-        if (res.data.errors) {      //si il y a une erreur dans la reponse
+      .then((res) => {
+        console.log(res);
+        if (res.data.errors) {
           emailError.innerHTML = res.data.errors.email;
           passwordError.innerHTML = res.data.errors.password;
-        } else {                    //si il n'y a pas d'erreur dans la réponse, je redirige vers la page d'accueil
+        } else {
           window.location = "/";
         }
       })
-      .catch((err) => {             //catch en cas d'erreur survenue, et log de l'erreur dans la console.
+      .catch((err) => {
         console.log(err);
       });
   };
@@ -37,7 +38,7 @@ const SignInForm = () => {//formulaire de connexion
       <label htmlFor="email">Email</label>
       <br />
       <input
-        type="text"
+        type="email"
         name="email"
         id="email"
         onChange={(e) => setEmail(e.target.value)}
