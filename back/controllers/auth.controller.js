@@ -1,13 +1,12 @@
 const UserModel = require("../models/user.model");
 const jwt = require("jsonwebtoken");
-const { signUpErrors } = require("../utils/errors.utils");
-const { signInErrors } = require("../utils/errors.utils");
+const { signUpErrors, signInErrors } = require('../utils/errors.utils');
 
 const maxAge = 1000 * 60 * 60 * 24;
 const createToken = (id) => {
   return jwt.sign({ id }, process.env.TOKEN_SECRET, {
     //token valable 24h
-    expiresIn: 1000 * 60 * 60 * 24, 
+    expiresIn: maxAge , 
   });
 };
 
