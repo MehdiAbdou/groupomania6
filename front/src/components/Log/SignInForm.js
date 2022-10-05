@@ -38,7 +38,7 @@ const SignInForm = () => {
       <label htmlFor="email">Email</label>
       <br />
       <input
-        type="email"
+        type="text"
         name="email"
         id="email"
         onChange={(e) => setEmail(e.target.value)}
