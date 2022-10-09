@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import Log from "../components/Log";
 import { UidContext } from "../components/AppContext";
+import UpdateProfil from "../components/Profil/UpdateProfil";
 
 
 const Profile = () => {
@@ -9,7 +10,7 @@ const Profile = () => {
   return (
     <div className="profil-page">
       {uid ? ( //Si j'ai déjà l'uid attribué, j'affiche la page profil de l'usilisateur
-         <h1>UPATADE PROFIL</h1>
+         <UpdateProfil/>
       ) : (
         //Sinon, je propose la connexion
         <div className="log-container">
