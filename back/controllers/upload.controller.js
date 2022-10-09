@@ -3,14 +3,14 @@ const fs = require('fs')
 const { uploadErrors } = require('../utils/errors.utils') 
 
 module.exports.uploadProfil = async (req, res) => {
-    try {                                                 //verif format 
+    try {                                                 //vérif format 
         if (req.file.mimetype !== 'image/jpg' &&
             req.file.mimetype !== 'image/png' &&
             req.file.mimetype !== 'image/jpeg'
         )
             throw Error('Type de fichier invalide')
 
-        if (req.file.size > 500000) throw Error('Fichier trop volumineux')    //verif du poids du fichier
+        if (req.file.size > 500000) throw Error('Fichier trop volumineux')    //vérif du poids du fichier
     } catch (err) {
         const errors = uploadErrors(err)
         return res.status(201).json({ errors })

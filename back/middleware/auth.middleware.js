@@ -22,7 +22,7 @@ module.exports.checkUser = (req, res, next) => {
   }
 };
 
-//Verification de l'existence et de la validité du token de l'utilisateur
+//Vérif token
 module.exports.requireAuth = (req, res, next) => {
   const token = req.cookies.jwt;
   if (token) {
@@ -38,7 +38,7 @@ module.exports.requireAuth = (req, res, next) => {
   }
 };
 
-//vérification de la condition Administrateur de l'utilisateur
+//vérif Admin
 
 module.exports.isPostAuth = (req, res, next) => {
   const token = req.cookies.jwt;

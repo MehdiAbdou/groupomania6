@@ -9,7 +9,7 @@ module.exports.createPost = async (req, res) => {
 
   if (req.file) {
     try {
-      //verification format 
+      //vérif format de l'image
       if (
         req.file.mimetype !== "image/jpg" &&
         req.file.mimetype !== "image/png" &&
@@ -17,7 +17,7 @@ module.exports.createPost = async (req, res) => {
       )
         throw Error("Type de fichier invalide");
 
-      //verif du poids du fichier
+      //vérif du poids du fichier
       if (req.file.size > 500000) throw Error("Fichier trop volumineux");
     } catch (err) {
       const errors = uploadErrors(err);

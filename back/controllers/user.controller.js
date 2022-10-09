@@ -10,7 +10,6 @@ module.exports.getAllUsers = async (req, res) => {
 //Obtenir les données d'un seul utilisateur
 module.exports.userInfo = (req, res) => {
   if (!ObjectID.isValid(req.params.id))
-    //Si l'id de la requête ne correspond pas je retourne une erreur
     return res.status(400).send("ID inconnu : " + req.params.id);
 
   UserModel.findById(req.params.id, (err, docs) => {

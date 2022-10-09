@@ -24,7 +24,7 @@ module.exports.signUp = async (req, res) => {
 };
 
 module.exports.signIn = async (req, res) => {
-  const { email, password } = req.body; //destructuring comme dans le signUp, on pourrait également faire comme suit:
+  const { email, password } = req.body; 
   
   try {
     const user = await UserModel.login(email, password);
@@ -44,7 +44,7 @@ module.exports.signIn = async (req, res) => {
 };
 
 module.exports.logout = async (req, res) => {
-  res.cookie("jwt", "", { maxAge: 1 }); //on attribue un cookie qui va vivre 1ms, puis rediriger l'utilisateur
+  res.cookie("jwt", "", { maxAge: 1 }); //on attribue un cookie 1ms, puis rediriger l'utilisateur.
   res.redirect("/");
 };
 

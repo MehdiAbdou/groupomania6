@@ -12,7 +12,7 @@ const app = express();
 
 //Ratelimiter
 const limiter = rateLimit({
-  windowMs: 1000 /*ms*/ * 60 /*secondes*/ * 15 /*minutes*/, // soit 15 minutes [c'est a définir en ms donc plutôt que de calculer je prends 1000ms pour une seconde, *le nombre de secondes dans une minute, *le nombre de minutes que je souhaites(et je peux étendre en heures, jours, etc....)]
+  windowMs: 1000 /*ms*/ * 60 /*secondes*/ * 15 /*minutes*/, 
   max: 25, // Limite chaque IP a 25 requêtes par tranche de 15 minutes
   standardHeaders: true, // Renvoie le statut du ratelimiter aux headers `RateLimit-*`
   legacyHeaders: false, // Désactive le ratelimiter pour les headers `X-RateLimit-*`
