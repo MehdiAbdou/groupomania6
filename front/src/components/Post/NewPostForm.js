@@ -1,40 +1,40 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { isEmpty, timestampParser } from "../Utils";
-import { NavLink } from "react-router-dom";
-import { addPost, getPosts } from "../../actions/post.actions";
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { isEmpty, timestampParser } from '../Utils';
+import { NavLink } from 'react-router-dom';
+import { addPost, getPosts } from '../../actions/post.actions';
 
 const NewPostForm = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
   const [postPicture, setPostPicture] = useState(null);
   const [file, setFile] = useState();
-  const userData = useSelector((state) => state.userReducer);
-  const errors = useSelector((state) => state.errorReducer.postError);
+  const userData = useSelector(state => state.userReducer);
+  const errors = useSelector(state => state.errorReducer.postError);
   const dispatch = useDispatch();
 
   const handlePost = () => {
     if (message || postPicture) {
       const data = new FormData();
-      data.append("posterId", userData._id);
-      data.append("message", message);
-      if (file) data.append("file", file);
+      data.append('posterId', userData._id);
+      data.append('message', message);
+      if (file) data.append('file', file);
 
       dispatch(addPost(data));
       dispatch(getPosts());
       cancelPost();
     } else {
-      alert("Veuillez entrer un message");
+      alert('Veuillez entrer un message');
     }
   };
 
   const cancelPost = () => {
-    setMessage("");
-    setPostPicture("");
-    setFile("");
+    setMessage('');
+    setPostPicture('');
+    setFile('');
   };
 
-  const handlePicture = (e) => {
+  const handlePicture = e => {
     setPostPicture(URL.createObjectURL(e.target.files[0]));
     setFile(e.target.files[0]);
   };
@@ -51,7 +51,7 @@ const NewPostForm = () => {
         <>
           <NavLink to="/profil">
             <div className="user-info">
-              <img src={userData.picture} alt="utilisateur connecté" />
+              <img src={userData.picture} alt="user-img" />
             </div>
           </NavLink>
           <div className="post-form">
@@ -59,13 +59,13 @@ const NewPostForm = () => {
               name="message"
               id="message"
               placeholder="Publiez votre humeur du jour!"
-              onChange={(e) => setMessage(e.target.value)}
+              onChange={e => setMessage(e.target.value)}
               value={message}
             />
-            {message || postPicture ? (
+            {message || postPicture >= 1 ? (
               <li className="card-container">
                 <div className="card-left">
-                  <img src={userData.picture} alt="utilisateur connecté" />
+                  <img src={userData.picture} alt="user-pic" />
                 </div>
                 <div className="card-right">
                   <div className="card-hearder">
@@ -76,7 +76,7 @@ const NewPostForm = () => {
                   </div>
                   <div className="content">
                     <p>{message}</p>
-                    <img src={postPicture} alt="publication d'un utilisateur" />
+                    <img src={postPicture} alt="" />
                   </div>
                 </div>
               </li>
@@ -84,14 +84,14 @@ const NewPostForm = () => {
             <div className="footer-form">
               <div className="icon">
                 <>
-                  <img src="./img/icons/picture.svg" alt="icone d'upload de fichier" />
+                  <img src="./img/icons/picture.svg" alt="img" />
                   <input
-                  aria-label="upload-picture"
+                    aria-label="upload-picture"
                     type="file"
                     id="file-upload"
                     name="file"
                     accept=".jpg, .jpeg, .png"
-                    onChange={(e) => handlePicture(e)}
+                    onChange={e => handlePicture(e)}
                   />
                 </>
               </div>
