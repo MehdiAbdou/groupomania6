@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { updateBio } from "../../actions/user.actions";
-import LeftNav from "../LeftNav";
-import { dateParser } from "../Utils";
-import UploadImg from "./UploadImg";
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateBio } from '../../actions/user.actions';
+import LeftNav from '../LeftNav';
+import { dateParser } from '../Utils';
+import UploadImg from './UploadImg';
 
 const UpdateProfil = () => {
-  const [bio, setBio] = useState("");
+  const [bio, setBio] = useState('');
   const [updateForm, setUpdateForm] = useState(false);
-  const userData = useSelector((state) => state.userReducer);
-  const error = useSelector((state) => state.errorReducer.userError);
+  const userData = useSelector(state => state.userReducer);
+  const error = useSelector(state => state.errorReducer.userError);
   const dispatch = useDispatch();
 
   const handleUpdate = () => {
@@ -25,7 +25,7 @@ const UpdateProfil = () => {
       <div className="update-container">
         <div className="left-part">
           <h3>Photo de profil</h3>
-          <img src={userData.picture} alt="utilisateur connecté" />
+          <img src={userData.picture} alt="user-pic" />
           <UploadImg />
           <p>{error.maxSize}</p>
           <p>{error.format}</p>
@@ -46,7 +46,7 @@ const UpdateProfil = () => {
                 <textarea
                   type="text"
                   defaultValue={userData.bio}
-                  onChange={(e) => setBio(e.target.value)}
+                  onChange={e => setBio(e.target.value)}
                 ></textarea>
                 <button onClick={handleUpdate}>Valider modifications</button>
               </>
