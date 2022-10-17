@@ -28,7 +28,7 @@ module.exports.createPost = async (req, res) => {
 
     //stockage de la nouvelle image.
     fs.writeFile(
-      `../groupomania_front/public/uploads/posts/${fileName}`,
+      `../front/public/uploads/posts/${fileName}`,
       req.file.buffer,
       (err) => {
         if (err) throw err;

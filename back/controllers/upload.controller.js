@@ -19,7 +19,7 @@ module.exports.uploadProfil = async (req, res) => {
     const fileName = req.body.name + '.jpg'         //rename fichier
 
     //stockage de la nouvelle image.
-    fs.writeFile(`${__dirname}/../../groupomania_front/public/uploads/profil/${fileName}`, req.file.buffer, (err) => {
+    fs.writeFile(`${__dirname}/../../front/public/uploads/profil/${fileName}`, req.file.buffer, (err) => {
         if (err) throw (err)
     })
 
