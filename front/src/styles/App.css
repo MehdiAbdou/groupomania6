@@ -132,7 +132,6 @@ body {
     text-decoration: underline;
 }
 .home .main .home-header .connection-form form input[type="submit"] {
-    padding: 14px 14px;
     border-radius: 20px;
 }
 .home .main .home-header .succes {
