@@ -8,6 +8,7 @@ import rootReducer from "./reducers";
 import { configureStore } from "@reduxjs/toolkit";
 import { getUsers } from "./actions/users.actions";
 import { StrictMode } from "react";
+import { getPosts } from './actions/post.actions';
 
 
 const store = configureStore({
@@ -16,6 +17,7 @@ const store = configureStore({
 });
 
 store.dispatch(getUsers());
+store.dispatch(getPosts());
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

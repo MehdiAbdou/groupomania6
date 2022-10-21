@@ -131,7 +131,7 @@ body {
     transform: translateX(3px);
 }
 .home .main .home-header .connection-form form input {
-    padding: 10px 14px;
+    
     margin: 0;
     font-size: 1.2rem;
     font-family: "font-2", serif;
@@ -586,6 +586,7 @@ nav .nav-container ul li img {
 }
 .card-container .card-right .comment-form input[type="text"]:focus {
     box-shadow: 0 0 2px rgba(51, 51, 51, 0.5);
+    font-weight: 600;
 }
 .card-container .card-right .comment-form input[type="submit"] {
     margin-top: 4px;
@@ -891,6 +892,7 @@ nav .nav-container ul li img {
     border-radius: 20px 20px 6px 20px;
     padding: 10px 20px;
     font-size: 1.1rem;
+    font-weight: 600;
 }
 .profil-page .update-container .right-part textarea {
     width: 100%;
@@ -1070,6 +1072,7 @@ nav .nav-container ul li img {
     padding: 12px 15px;
     border-radius: 20px 20px 6px 20px;
     border: 1px solid #4e5166;
+    font-weight: 600;
 }
 .post-container .post-form .card-container {
     background: #fff;
@@ -1433,4 +1436,8 @@ nav .nav-container ul li img {
     .trending-page .right-side .right-side-container {
         width: 404px;
    }
+}
+
+.heure{
+font-weight: 800;
 }

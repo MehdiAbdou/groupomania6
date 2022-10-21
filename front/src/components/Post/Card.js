@@ -59,7 +59,7 @@ const Card = ({ post }) => {
                         .join("")}
                   </h3>
                 </div>
-                <span>{dateParser(post.createdAt)}</span>
+                <span className="heure">{dateParser(post.createdAt)}</span>
               </div>
               <br />
               {isUpdated === false && <p>{post.message}</p>}
