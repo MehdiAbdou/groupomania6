@@ -34,7 +34,7 @@ input, textarea {
     width: 270px;
     height: 30px;
     font-family: "font-1", sans-serif;
-    background: #4E5166;
+    background: #fff;
     text-align: center;
 }
 textarea:focus {
@@ -258,6 +258,7 @@ nav .nav-container ul li img {
     display: grid;
     grid-template-columns: 66px 1fr;
     border: 2px solid #ffd7d7;
+    background:#ffd7d7 ;
     margin: 10px;
     padding: 16px;
     border-radius: 20px;
