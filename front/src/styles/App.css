@@ -1,5 +1,18 @@
 /*Settings*/
 
+@font-face {
+    font-family: "font-1";
+    src: url(./fonts/Lato-Thin.ttf);
+  }
+  @font-face {
+    font-family: "font-2";
+    src: url(./fonts/Lato-Regular.ttf);
+  }
+  @font-face {
+    font-family: "font-3";
+    src: url(./fonts/Lato-Bold.ttf);
+  }
+
 * {
     margin: 0;
     padding: 0;
