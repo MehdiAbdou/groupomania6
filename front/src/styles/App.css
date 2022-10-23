@@ -1284,7 +1284,7 @@ nav .nav-container ul li img {
     background: #ffd7d7;
     border-radius: 20px;
     padding: 16px;
-    box-shadow: 5px 7px 20px 9px #ff7c77 32;
+    box-shadow: 5px 5px 5px 5px #ff7c77 ;
     transition: 0.2s;
 }
 .trending-container ul li:hover {
