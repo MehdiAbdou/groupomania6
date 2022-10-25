@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteComment, editComment } from "../../actions/post.actions";
+import { deleteComment, editComment, getPosts } from "../../actions/post.actions";
 import { UidContext } from "../AppContext";
 
 const EditDeleteComment = ({ comment, postId }) => {
@@ -13,11 +13,12 @@ const EditDeleteComment = ({ comment, postId }) => {
 
   const handleEdit = (e) => {
     e.preventDefault();
-
+  
     if (text) {
-      dispatch(editComment(postId, comment._id, text));
-      setText("");
-      setEdit(false);
+      dispatch(editComment(postId, comment._id, text))
+      .then(() => dispatch(getPosts()))
+        .then(() => setText(""))
+        .then(() =>setEdit(false));
     }
   };
 
@@ -39,7 +40,7 @@ const EditDeleteComment = ({ comment, postId }) => {
           <img src="./img/icons/edit.svg" alt="edit-comment" />
         </span>
       )}
-      {(userData.isAdmin === true ||isAuthor === true) && edit  && (
+      {(userData.isAdmin === true ||isAuthor === true) && edit   && (
         <form action="" onSubmit={handleEdit} className="edit-comment-form">
           <label htmlFor="text" onClick={() => setEdit(!edit)}>
             Editer
